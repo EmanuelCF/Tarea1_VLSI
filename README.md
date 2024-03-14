@@ -22,8 +22,11 @@ Se observó que los resultados varían bastante, esto se debe a que en la ecuaci
 ### Diseño de un inversor
 
 ### Pruebas FO4
-* a
-* b
+* Suponiendo una relación PMOS/NMOS de 2/1, se montó el deck de SPICE equivalente de las figuras 8.9-8.10 del libro del curso, dicho archivo se encuentra en el repositorio con el nombre de "fo4.txt" y con ello se fue variando la relación PMOS/NMOS con tal de ir calculando los retardos de subida y bajada para averiguar cual relación de tamaño lograba que ambos tiempos fueran lo mas similares posibles:
+![Logo](figuras/grafica tiempos.jpg)
+
+De dicha gráfica se observó que los tiempos más similares se obtuvieron para una relación cercana a 4/1.
+* c
 
 ### Cálculo de resistencias con simulación 
 
