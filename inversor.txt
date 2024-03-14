@@ -1,0 +1,58 @@
+*  Generated for: PrimeSim
+*  Design library name: basic_cells
+*  Design cell name: inversor
+*  Design view name: schematic
+
+
+
+.option PARHIER = LOCAL
+.option PORT_VOLTAGE_SCALE_TO_2X = 1
+.option S_ELEM_CACHE_DIR = "/home/Cordero_Fallas_I_2024_vlsi/.synopsys_custom/sparam_dir"
+.option PVA_OUTPUT_DIR = "/home/Cordero_Fallas_I_2024_vlsi/.synopsys_custom/pva_dir"
+
+.option WDF=1
+.temp 25
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/xt018.lib' tm
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/param.lib' 3s
+.lib '/home/Cordero_Fallas_I_2024_vlsi/Tutorial/Hspice/lp5mos/config.lib' default
+
+*PrimeWave Design Environment Version U-2023.03-SP2
+*Sat Mar  9 20:00:45 2024
+
+.global gnd! vcc!
+********************************************************************************
+* Library          : basic_cells
+* Cell             : inversor
+* View             : schematic
+* View Search List : hspice hspiceD schematic cmos_sch spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xm2 out in vcc! vcc! pe w=440n l=180.0n as=9.6e-13 ad=9.6e-13 ps=4.96e-06 pd=4.96e-06
++ nrs=0.135 nrd=0.135 m='1*1' par1='1*1' xf_subext=0
+xm1 out in gnd! gnd! ne w=220n l=180.0n as=9.6e-13 ad=9.6e-13 ps=4.96e-06 pd=4.96e-06
++ nrs=0.135 nrd=0.135 m='1*1' par1='1*1' xf_subext=0
+v7 vcc! gnd! dc=1.8
+v5 in gnd! dc=0 PULSE 0 1.8 0ps 20ps 20ps 320ps 580ps
+
+
+
+
+
+
+
+
+.tran 10p 1000p start=0
+.option opfile=1 split_dp=1
+.option probe=1
+.probe tran v(*) level=1
+
+
+
+
+
+
+
+
+
+.end
+
