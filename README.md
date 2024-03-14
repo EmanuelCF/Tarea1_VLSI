@@ -17,6 +17,26 @@ Eq. 4.19: $$R=\frac{V_{DD}}{I_H+I_L}$$
 Se observó que los resultados varían bastante, esto se debe a que en la ecuación 4.16 se asume que el transistor conduce una corriente constante incluso con entradas cercanas a $V_{DD}/2$ mientras que en la 4.19 no se asume esto, por lo que se debe utilizar un promedio entre la corriente de encendido y apagado de los transistores.
 
 ### Cálculo teórico de capacitancia equivalente de compuerta
+Para el cálculo de la capacitancia equivalente de compuerta, se realizaron los cálculos individuales de las capacitancias gate-source, gate-drain y de difusión. Todas las ecuaciones utilizadas, se obtuvieron del documento. 
+#### Capacitancia gate-source
+$$C_{gs} = W_{dib} \cdot L_{dib} \cdot C_{ox} + W_{dib} \cdot C_{OV}
+*NMOS $$C_{gs} = 0.22 \mu m \cdot 0.18 \mu m \cdot 8.46 \frac{fF}{\mu m^2} + 0.22 \mu m \cdot 0.33 \frac{fF}{\mu m^2} = 0.4076 fF
+*PMOS $$C_{gs} = 0.22 \mu m \cdot 0.18 \mu m \cdot 8.91 \frac{fF}{\mu m^2} + 0.22 \mu m \cdot 0.32 \frac{fF}{\mu m^2} = 0.4232 fF
+
+#### Capacitancia gate-drain
+$$C_{gd} = W_{eff} \cdot C_{OV}
+*NMOS $$C_{gd} = 0.17 \mu m \cdot 0.33 \frac{fF}{\mu m} = 0.0561 fF
+*PMOS $$C_{gd} = 0.25 \mu m \cdot 0.32 \frac{fF}{\mu m} = 0.08 fF
+
+#### Capacitancia de difusión 
+$$C_{db} = C_{sb} = C_{gs}
+*NMOS $$C_{db} = C_{sb} = 0.4076 fF
+*PMOS $$C_{db} = C_{sb} = 0.4232 fF
+
+Finalmente, la capacitancia equivalente del NMOS y el PMOS, se calculó a partir de la siguiente ecuación:
+$$C_{g} = C_{gs} + C_{gd} 
+*NMOS $$C_{g} =  0.4076 fF + 0.0561 fF = 0.4637 fF 
+*PMOS $$C_{g} = 0.4232 fF + 0.08 fF = 0.5032 fF
 
 ## Parte 2. Diseño de un inversor mínimo de tamaño óptimo
 ### Diseño de un inversor
