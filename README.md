@@ -23,16 +23,47 @@ Se observó que los resultados varían bastante, esto se debe a que en la ecuaci
 
 ### Pruebas FO4
 * Suponiendo una relación PMOS/NMOS de 2/1, se montó el deck de SPICE equivalente de las figuras 8.9-8.10 del libro del curso, dicho archivo se encuentra en el repositorio con el nombre de "fo4.txt" y con ello se fue variando la relación PMOS/NMOS con tal de ir calculando los retardos de subida y bajada para averiguar cual relación de tamaño lograba que ambos tiempos fueran lo mas similares posibles:
-![Logo](figuras/grafica tiempos.jpg)
+![Logo](figuras/graficatiempos.jpg)
 
 De dicha gráfica se observó que los tiempos más similares se obtuvieron para una relación cercana a 4/1.
-* c
+* Seguidamente se probó optimizar el fo4 con el código que se proporciona en la figura 8.11 del libro, esto para comprobar la relación PMOS/NMOS obtenida en el punto anterior. De dicha optimización el programa indicó que la relación de tamaños más adecuada para igualar los tiempos debe ser de 4.33/1.
+![optimizacion](figuras/optimizacion.jpeg)
 
-### Cálculo de resistencias con simulación 
+Con estos datos se corrobora que la relación de tamaños debe ser muy cercana a 4/1, sin embargo a la hora de fabricar la compuerta se debe tener en cuenta qué tan precisa necesito que sea, ya que entre las 2 relaciones obtenidas se obtienen tiempos muy parecidos por lo que ahorrar un poco de área en los transistores va a requerir menos potencia de operación y si la aplicación no es muy crítica esto puede resultar beneficioso. De igual manera se puede ampliar el rango de busqueda para el script de optimización, sin embargo con ayuda de las gráficas se puede esperar que para relaciones de tamaño mayores la diferencia de tiempos siga aumentando.
+
+* Finalmente se procedió a calcular las resistencias de los transistores utilizando las ecuaciones de la sección 8.4.5 del libro, esto se hizo utilizando la relación obtenida por el optimizador y con los valores de capacitancia obtenidos en la primera parte de la tarea.
+Los datos de tiempo utilizados se muestran en la siguiente tabla:
+
+|     |  H=3  |  H=4  |  $\Delta t$  |
+|  :---  |  ---:  |  :---:  |  ---  |
+|  $t_{pdr} (ps)$ |  91,1573  |  105,6255  |  14,4682  |
+|  $t_{pdf} (ps)$ |  85,9056  |  105,6065  |  19,7009  |
+
+Una vez obtenidos los valores de tiempo se procede a despejar las resistencias de las siguientes ecuaciones:
+$$\Delta t_{pdr}=\frac{3}{2}R_p C$$
+
+En donde $C=0,503fF$, por lo tanto:
+
+$$ R_p= 19,175 k \Omega $$
+
+De la misma manera para el transistor NMOS:
+$$\Delta t_{pdf}=\frac3R_n C$$
+
+en donde $C=0,4631fF$, por lo tanto:
+$$R_n= 14,180 k \Omega $$
+
+Finalmente las constantes de tiempo resultantes son:
+
+$$\tau_p= 9,65ps$$
+
+y para el NMOS:
+
+$$\tau_n= 6,57ps$$
+
 
 
 ### Para una fórmula en *markdown*
-$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$ 
+$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$
 ## Datos Relevantes
 ### Para generar listas
 * Punto 1
