@@ -1,6 +1,7 @@
 # Informe Tarea 1 VLSI
 ## Emanuel Cordero Fallas y Yerlyn Mora Artavia
 ## Introducción
+En este repositorio se encuentran los archivos utilizados para las simulaciones de la tarea 1 la cual consiste en determinar la resistencia y las capacitancias parásitas de transistores unitarios PMOS y NMOS así como sus constantes de tiempo.
 
 ## Parte 1. Determinación de las resistencias de canal de transistores mínimos NMOS y PMOS para el proceso XH018. Módulo LPMOS: ne, pe (1,8V).
 ### Cálculo teórico de resistencias efectivas
@@ -41,9 +42,10 @@ $$C_{g} = C_{gs} + C_{gd}$$
 ## Parte 2. Diseño de un inversor mínimo de tamaño óptimo
 ### Diseño de un inversor
 En cuanto al diseño de un inversor, se establecieron los siguientes valores para cada uno de los transistores:
-* NMOS $$W=2u$$ $$L=0.8$$
-* PMOS $$W=4u$$ $$L=0.8$$
-Para la confirmación del diseño, se graficaron las curvas características de ambos transistoreS. A continuación se muestra la curva característica del NMOS. 
+* NMOS $$W=0.22 \mu m$$ $$L=0.18 \mu m$$
+* PMOS $$W= 0.44 \mu m$$ $$L=0.18 \mu m$$
+Para la confirmación del diseño, se graficaron las curvas características de ambos transistoreS. A continuación se muestra la curva característica del NMOS.
+
 ![NMOS](figuras/nmos.jpeg)
 
 A continuación se muestra la obtenida para el transistor PMOS. 
@@ -82,37 +84,8 @@ $$R_n= 14,180 k \Omega $$
 
 Finalmente las constantes de tiempo resultantes son:
 
-$$\tau_p= 9,65ps$$
+$$\tau_p= 28,95ps$$
 
 y para el NMOS:
 
-$$\tau_n= 6,57ps$$
-
-
-
-### Para una fórmula en *markdown*
-$$f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}$$
-## Datos Relevantes
-### Para generar listas
-* Punto 1
-* Punto 2
-* Punto 3
-## Solución
-### Para insertar código
-```python
-import time
-while True
-  print("This is a python code")
-  time.sleep(5)
-```
-## Resultados
-### Para insertar una tabla 
-
-|  Info1  |  Info2  |  Info3  |  Info4  |
-|  :---  |  ---:  |  :---:  |  ---  |
-|  A  |  B  |  C  |  D  |
-|  AA  |  BB  |  CC  |  DD  |
-
-## Análisis
-### Incluir figuras 
-![Logo](figuras/Firma_TEC.png)
+$$\tau_n= 19,71ps$$
