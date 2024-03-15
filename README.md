@@ -40,7 +40,13 @@ $$C_{g} = C_{gs} + C_{gd}$$
 
 ## Parte 2. Diseño de un inversor mínimo de tamaño óptimo
 ### Diseño de un inversor
+En cuanto al diseño de un inversor, se establecieron los siguientes valores para cada uno de los transistores:
+* NMOS $$W=2u$$ $$L=0.8$$
+* PMOS $$W=4u$$ $$L=0.8$$
+Para la confirmación del diseño, se graficaron las curvas características de ambos transistoreS. A continuación se muestra la curva característica del NMOS. 
 ![NMOS](figuras/nmos.jpeg)
+
+A continuación se muestra la obtenida para el transistor PMOS. 
 ![PMOS](figuras/pmos.jpeg)
 
 ### Pruebas FO4
