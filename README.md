@@ -40,6 +40,8 @@ $$C_{g} = C_{gs} + C_{gd}$$
 
 ## Parte 2. Diseño de un inversor mínimo de tamaño óptimo
 ### Diseño de un inversor
+![NMOS](figuras/nmos.jpeg)
+![PMOS](figuras/pmos.jpeg)
 
 ### Pruebas FO4
 * Suponiendo una relación PMOS/NMOS de 2/1, se montó el deck de SPICE equivalente de las figuras 8.9-8.10 del libro del curso, dicho archivo se encuentra en el repositorio con el nombre de "fo4.txt" y con ello se fue variando la relación PMOS/NMOS con tal de ir calculando los retardos de subida y bajada para averiguar cual relación de tamaño lograba que ambos tiempos fueran lo mas similares posibles:
